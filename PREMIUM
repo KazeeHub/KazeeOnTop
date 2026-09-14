@@ -31,7 +31,7 @@ end
 -- WHITELIST SYSTEM CONFIGURATION
 -- ==========================================
 local WhitelistedUsers = {
-    "jemmy3735",
+    "jemmy3735","Iamnoob21670"
 }
 
 local function isWhitelisted()
