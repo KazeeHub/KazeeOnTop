@@ -170,7 +170,7 @@ SelectCloseBtn.Size = UDim2.fromOffset(24, 24)
 SelectCloseBtn.Position = UDim2.new(1, -28, 0.5, -12)
 SelectCloseBtn.BackgroundTransparency = 1
 SelectCloseBtn.TextColor3 = Color3.fromRGB(200, 150, 150)
-SelectCloseBtn.Text = "✕"
+SelectCloseBtn.Text = "X"
 SelectCloseBtn.Font = Enum.Font.GothamBold
 SelectCloseBtn.TextSize = 12
 SelectCloseBtn.ZIndex = 2
@@ -351,26 +351,15 @@ CloseBtn.Size = UDim2.fromOffset(24, 24)
 CloseBtn.Position = UDim2.new(1, -28, 0.5, -12)
 CloseBtn.BackgroundTransparency = 1
 CloseBtn.TextColor3 = Color3.fromRGB(200, 150, 150)
-CloseBtn.Text = "✕"
+CloseBtn.Text = "X"
 CloseBtn.Font = Enum.Font.GothamBold
 CloseBtn.TextSize = 12
 CloseBtn.ZIndex = 2
 CloseBtn.Parent = TitleBar
 
-local ExpandBtn = Instance.new("TextButton")
-ExpandBtn.Size = UDim2.fromOffset(24, 24)
-ExpandBtn.Position = UDim2.new(1, -56, 0.5, -12)
-ExpandBtn.BackgroundTransparency = 1
-ExpandBtn.TextColor3 = Color3.fromRGB(200, 150, 150)
-ExpandBtn.Text = "🗖"
-ExpandBtn.Font = Enum.Font.GothamBold
-ExpandBtn.TextSize = 11
-ExpandBtn.ZIndex = 2
-ExpandBtn.Parent = TitleBar
-
 local MinimizeBtn = Instance.new("TextButton")
 MinimizeBtn.Size = UDim2.fromOffset(24, 24)
-MinimizeBtn.Position = UDim2.new(1, -84, 0.5, -12)
+MinimizeBtn.Position = UDim2.new(1, -56, 0.5, -12)
 MinimizeBtn.BackgroundTransparency = 1
 MinimizeBtn.TextColor3 = Color3.fromRGB(200, 150, 150)
 MinimizeBtn.Text = "-"
@@ -639,7 +628,7 @@ local function setupStealAnEggHub()
             SmallCloseBtn.Position = UDim2.new(1, -24, 0.5, -10)
             SmallCloseBtn.BackgroundTransparency = 1
             SmallCloseBtn.TextColor3 = Color3.fromRGB(200, 150, 150)
-            SmallCloseBtn.Text = "✕"
+            SmallCloseBtn.Text = "X"
             SmallCloseBtn.Font = Enum.Font.GothamBold
             SmallCloseBtn.TextSize = 11
             SmallCloseBtn.ZIndex = 5
@@ -1191,26 +1180,6 @@ end)
 BackToGameSelectBtn.MouseButton1Click:Connect(function()
     MainFrame.Visible = false
     GameSelectFrame.Visible = true
-end)
-
--- Expand / Minimize functionality
-local isExpanded = false
-ExpandBtn.MouseButton1Click:Connect(function()
-    isExpanded = not isExpanded
-    local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-    if isExpanded then
-        ExpandBtn.Text = "🗗"
-        TweenService:Create(MainFrame, tweenInfo, {
-            Size = UDim2.fromOffset(720, 480),
-            Position = UDim2.new(0.5, -360, 0.5, -240)
-        }):Play()
-    else
-        ExpandBtn.Text = "🗖"
-        TweenService:Create(MainFrame, tweenInfo, {
-            Size = UDim2.fromOffset(520, 360),
-            Position = UDim2.new(0.5, -260, 0.5, -180)
-        }):Play()
-    end
 end)
 
 MinimizeBtn.MouseButton1Click:Connect(function()
